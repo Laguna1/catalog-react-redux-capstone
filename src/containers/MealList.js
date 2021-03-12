@@ -1,18 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { fetchMealByDetail, selectMeal } from '../actions/index';
+import MealCard from '../components/MealCard';
 
-const MealList = ({ meals }) => {
-//   return (
-//     <div className="meal-list">
-//       <h1>MealList here!</h1>
-//     </div>
-//   );
+const MealList = ({ meals, fetchMealByDetail, selectMeal }) => {
+  const handleFetchMeal = meal => {
+    selectMeal(meal.detail);
+    fetchMealByDetail(meal.detail);
+  };
+
   const addMeals = meals.map(meal => (
-    <div className="meal-add" key={meals.mealId}>
-      <h2>{meals.title}</h2>
-      <div>{meals.category}</div>
-    </div>
+    <MealCard
+      meal={meal}
+      key={meal.mealId}
+      clickHandler={() => handleFetchMeal(meal)}
+    />
   ));
 
   return (
@@ -25,18 +28,19 @@ const MealList = ({ meals }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  meals: state.meals,
+const mapDispatchToProps = dispatch => ({
+  selectMeal: detail => dispatch(selectMeal(detail)),
+  fetchMealByDetail: detail => dispatch(fetchMealByDetail(detail)),
 });
 
 MealList.propTypes = {
-  meals: PropTypes.arrayOf(
-    PropTypes.shape({
-      mealId: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      category: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
+  meals: PropTypes.arrayOf(PropTypes.object),
+  selectMeal: PropTypes.func.isRequired,
+  fetchMealByDetail: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, null)(MealList);
+MealList.defaultProps = {
+  meals: [],
+};
+
+export default connect(null, mapDispatchToProps)(MealList);
