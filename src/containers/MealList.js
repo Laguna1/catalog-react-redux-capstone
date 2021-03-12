@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const MealList = ({ meals }) => {
 //   return (
@@ -8,9 +9,9 @@ const MealList = ({ meals }) => {
 //     </div>
 //   );
   const addMeals = meals.map(meal => (
-    <div className="meal-add" key={meals.id}>
-      <h2>{meals.title}</h2>
-      <div>{meals.content.substring(0, 100)}</div>
+    <div className="meal-add" key={meal.mealId}>
+      <h2>{meal.title}</h2>
+      <div>{meal.category}</div>
     </div>
   ));
 
@@ -27,5 +28,15 @@ const MealList = ({ meals }) => {
 const mapStateToProps = state => ({
   meals: state.meals,
 });
+
+MealList.propTypes = {
+  meals: PropTypes.arrayOf(
+    PropTypes.shape({
+      mealId: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
 
 export default connect(mapStateToProps, null)(MealList);
