@@ -9,9 +9,9 @@ const MealList = ({ meals }) => {
 //     </div>
 //   );
   const addMeals = meals.map(meal => (
-    <div className="meal-add" key={meal.mealId}>
-      <h2>{meal.title}</h2>
-      <div>{meal.category}</div>
+    <div className="meal-add" key={meals.mealId}>
+      <h2>{meals.title}</h2>
+      <div>{meals.category}</div>
     </div>
   ));
 
