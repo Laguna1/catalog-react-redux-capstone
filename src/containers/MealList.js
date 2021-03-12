@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchMealByDetail, selectMeal } from '../actions/index';
+import { fetchMealsByDetail, selectMeal } from '../actions/index';
 import MealCard from '../components/MealCard';
 
-const MealList = ({ meals, fetchMealByDetail, selectMeal }) => {
+const MealList = ({ meals, fetchMealsByDetail, selectMeal }) => {
   const handleFetchMeal = meal => {
     selectMeal(meal.detail);
-    fetchMealByDetail(meal.detail);
+    fetchMealsByDetail(meal.detail);
   };
 
   const addMeals = meals.map(meal => (
@@ -30,13 +30,13 @@ const MealList = ({ meals, fetchMealByDetail, selectMeal }) => {
 
 const mapDispatchToProps = dispatch => ({
   selectMeal: detail => dispatch(selectMeal(detail)),
-  fetchMealByDetail: detail => dispatch(fetchMealByDetail(detail)),
+  fetchMealByDetail: detail => dispatch(fetchMealsByDetail(detail)),
 });
 
 MealList.propTypes = {
   meals: PropTypes.arrayOf(PropTypes.object),
   selectMeal: PropTypes.func.isRequired,
-  fetchMealByDetail: PropTypes.func.isRequired,
+  fetchMealsByDetail: PropTypes.func.isRequired,
 };
 
 MealList.defaultProps = {

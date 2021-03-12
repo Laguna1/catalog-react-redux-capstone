@@ -5,6 +5,11 @@ import {
   FETCH_FAIL,
   CHANGE_FILTER,
   FETCH_CATEGORY,
+  FETCH_MEAL,
+  SELECT_MEAL,
+  FETCH_INIT_MEAL,
+  FETCH_SUCCESS,
+  FETCH_MEAL_ERROR,
 } from './actionTypes';
 
 import { FILTERED_MEALS_BY_CATEGORY } from '../api/api';
@@ -31,16 +36,42 @@ const fetchCategories = content => ({
   },
 });
 
-const fetchMealsByCategories = category => dispatch => {
+const fetchMeal = content => ({
+  type: FETCH_MEAL,
+  payload: {
+    meal: content,
+  },
+});
+
+const fetchSuccess = data => ({
+  type: FETCH_SUCCESS,
+  payload: data,
+});
+
+const selectMeal = detail => ({
+  type: SELECT_MEAL,
+  detail,
+});
+
+const fetchInitMeal = () => ({
+  type: FETCH_INIT_MEAL,
+});
+
+const fetchMealError = error => ({
+  type: FETCH_MEAL_ERROR,
+  payload: error,
+});
+
+const fetchMealsByDetail = detail => dispatch => {
   const url = FILTERED_MEALS_BY_CATEGORY`${category}`;
 
-  dispatch(fetchInit());
+  dispatch(fetchInitMeal());
   axios.get(url)
     .then(responce => {
-      dispatch(fetchMeals(responce.data.meals));
+      dispatch(fetchSuccess(responce.data));
     })
-    .catch(e => {
-      dispatch(fetchFail(e.message));
+    .catch(error => {
+      dispatch(fetchMealError(error.message));
     });
 };
 
@@ -57,5 +88,10 @@ export {
   fetchFail,
   fetchCategories,
   changeFilter,
-  fetchMealsByCategories,
+  fetchMeal,
+  fetchSuccess,
+  fetchMealsByDetail,
+  fetchInitMeal,
+  selectMeal,
+  fetchMealError,
 };
