@@ -1,18 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Meal = ({ mealId, title, content }) => (
+const Meal = ({ meal }) => (
   <div className="meal">
-    <p>{mealId}</p>
-    <h>{title}</h>
-    <p>{content}</p>
+    <p>{meal.name}</p>
   </div>
 );
 
 Meal.propTypes = {
-  mealId: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
+  name: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default Meal;

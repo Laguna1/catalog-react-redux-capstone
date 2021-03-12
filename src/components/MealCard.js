@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom';
 const MealCard = ({ meal, clickHandler }) => {
   const {
     mealId,
-    title,
-    content,
+    name,
+    category,
+    image,
+    ingredients,
+    measures,
   } = meal;
 
   const handleClick = meal => {
@@ -14,7 +17,7 @@ const MealCard = ({ meal, clickHandler }) => {
   };
 
   return (
-    <div className="meal-card" key={meal.mealId}>
+    <div className="meal-card" key={mealId}>
       <h1 className="title">
         <Link
           to={{
@@ -23,19 +26,25 @@ const MealCard = ({ meal, clickHandler }) => {
           onClick={() => handleClick(meal)}
           className="link"
         >
-          {meal.title}
+          {meal.name}
         </Link>
       </h1>
-      <p>{meal.content}</p>
+      <p>{category}</p>
+      <img src={image} alt={name} />
+      <p>{ingredients}</p>
+      <p>{measures}</p>
     </div>
   );
 };
 
 MealCard.propTypes = {
   meal: PropTypes.shape({
-    mealId: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
+    mealId: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    ingredients: PropTypes.string.isRequired,
+    measures: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
   }).isRequired,
   clickHandler: PropTypes.func.isRequired,
 };
