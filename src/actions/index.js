@@ -62,8 +62,8 @@ const fetchMealError = error => ({
   payload: error,
 });
 
-const fetchMealsByDetail = detail => dispatch => {
-  const url = FILTERED_MEALS_BY_CATEGORY`${category}`;
+const fetchMealsByDetail = categories => dispatch => {
+  const url = FILTERED_MEALS_BY_CATEGORY;
 
   dispatch(fetchInitMeal());
   axios.get(url)
