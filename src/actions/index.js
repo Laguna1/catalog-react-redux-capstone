@@ -5,11 +5,10 @@ import {
   FETCH_FAIL,
   CHANGE_FILTER,
   FETCH_CATEGORY,
-  FETCH_MEAL,
-  SELECT_MEAL,
   FETCH_INIT_MEAL,
-  FETCH_SUCCESS,
+  SELECT_MEAL,
   FETCH_MEAL_ERROR,
+  FETCH_SUCCESS,
 } from './actionTypes';
 
 const fetchInit = () => ({
@@ -34,21 +33,14 @@ const fetchCategories = content => ({
   },
 });
 
-const fetchMeal = content => ({
-  type: FETCH_MEAL,
-  payload: {
-    meal: content,
-  },
+const selectMeal = Id => ({
+  type: SELECT_MEAL,
+  Id,
 });
 
 const fetchSuccess = data => ({
   type: FETCH_SUCCESS,
   payload: data,
-});
-
-const selectMeal = idMeal => ({
-  type: SELECT_MEAL,
-  idMeal,
 });
 
 const fetchInitMeal = () => ({
@@ -60,14 +52,13 @@ const fetchMealError = error => ({
   payload: error,
 });
 
-const fetchMealById = idMeal => dispatch => {
+const fetchMealById = Id => dispatch => {
   const BASE_URL = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
-  const url = `${BASE_URL}${idMeal}`;
-
+  const url = `${BASE_URL}${Id}`;
   dispatch(fetchInitMeal());
   axios.get(url)
-    .then(responce => {
-      dispatch(fetchSuccess(responce.data.meals));
+    .then(response => {
+      dispatch(fetchSuccess(response.data.meals));
     })
     .catch(error => {
       dispatch(fetchMealError(error.message));
@@ -87,7 +78,7 @@ export {
   fetchFail,
   fetchCategories,
   changeFilter,
-  fetchMeal,
   fetchMealById,
   selectMeal,
+  fetchSuccess,
 };

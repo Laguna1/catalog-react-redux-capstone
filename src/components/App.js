@@ -5,7 +5,7 @@ import MainPage from './MainPage';
 import Meal from './Meal';
 import './App.css';
 
-function App() {
+const App = () => {
   const meal = useSelector(store => store.singleMealReducer.meal[0]);
   return (
     <>
@@ -23,6 +23,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;

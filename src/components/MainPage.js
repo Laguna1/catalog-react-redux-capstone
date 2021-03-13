@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect, useSelector } from 'react-redux';
-import { getMeals, getAllCategories } from '../api/api';
+import { getMeals, getAllGroups } from '../api/api';
 import MealList from '../containers/MealList';
 import CategoryFilter from './CategoryFilter';
-import { getMealCategoriesList, getMealsList } from '../store';
+import { getMealGroupsList, getMealsList } from '../store';
 import {
   fetchInit,
   fetchMeals,
@@ -14,7 +14,7 @@ import {
 
 const MainPage = ({
   meals,
-  groups,
+  categories,
   loading,
   error,
   fetchInit,
@@ -29,16 +29,16 @@ const MainPage = ({
 
     try {
       const result = await getMeals(filter);
-      const groups = await getAllCategories();
+      const categories = await getAllGroups();
       fetchMeals(result);
-      fetchCategories(groups);
+      fetchCategories(categories);
     } catch (e) {
       fetchFail();
     }
   };
 
-  const handleFilterChange = async group => {
-    const filteredMeals = await getMeals(group);
+  const handleFilterChange = async category => {
+    const filteredMeals = await getMeals(category);
     fetchMeals(filteredMeals);
   };
 
@@ -48,8 +48,8 @@ const MainPage = ({
 
   return (
     <>
-      <CategoryFilter groups={groups} onFilter={handleFilterChange} />
-      {error && <p>Something went wrong - main-page</p>}
+      <CategoryFilter categories={categories} onFilter={handleFilterChange} />
+      {error && <p>Something went wrong - main page</p>}
       {loading ? (
         <p>Loading. 1 ..</p>
       ) : (
@@ -64,10 +64,10 @@ const MainPage = ({
 const mapStateToProps = state => {
   const { meals: { loading, error } } = state;
   const meals = getMealsList(state);
-  const groups = getMealCategoriesList(state);
+  const categories = getMealGroupsList(state);
   return {
     meals,
-    groups,
+    categories,
     loading,
     error,
   };
@@ -77,12 +77,12 @@ const mapDispatchToProps = dispatch => ({
   fetchInit: () => dispatch(fetchInit()),
   fetchMeals: result => dispatch(fetchMeals(result)),
   fetchFail: () => dispatch(fetchFail()),
-  fetchCategories: groups => dispatch(fetchCategories(groups)),
+  fetchCategories: categories => dispatch(fetchCategories(categories)),
 });
 
 MainPage.propTypes = {
   meals: PropTypes.arrayOf(PropTypes.object),
-  groups: PropTypes.arrayOf(PropTypes.object),
+  categories: PropTypes.arrayOf(PropTypes.object),
   loading: PropTypes.bool,
   error: PropTypes.bool,
   fetchInit: PropTypes.func.isRequired,
@@ -93,7 +93,7 @@ MainPage.propTypes = {
 
 MainPage.defaultProps = {
   meals: [],
-  groups: [],
+  categories: [],
   loading: false,
   error: false,
 };

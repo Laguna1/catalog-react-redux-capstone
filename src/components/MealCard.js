@@ -18,6 +18,7 @@ const MealCard = ({ meal, clickHandler }) => {
       <h1 className="title">
         <Link
           to={{
+            pathname: `/meals/${idMeal}`,
             state: { meal },
           }}
           onClick={() => handleClick(meal)}
@@ -26,16 +27,16 @@ const MealCard = ({ meal, clickHandler }) => {
           {meal.strMeal}
         </Link>
       </h1>
-      <img src={strMealThumb} alt={strMeal} />
+      <img src={strMealThumb} alt={strMeal} className="image" />
     </div>
   );
 };
 
 MealCard.propTypes = {
   meal: PropTypes.shape({
-    idMeal: PropTypes.number.isRequired,
+    idMeal: PropTypes.string.isRequired,
     strMeal: PropTypes.string.isRequired,
-    strMealThumb: PropTypes.string.isRequired,
+    strMealThumb: PropTypes.string,
   }).isRequired,
   clickHandler: PropTypes.func.isRequired,
 };
