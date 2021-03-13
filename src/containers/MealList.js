@@ -6,14 +6,14 @@ import MealCard from '../components/MealCard';
 
 const MealList = ({ meals, fetchMealsByDetail, selectMeal }) => {
   const handleFetchMeal = meal => {
-    selectMeal(meal.detail);
-    fetchMealsByDetail(meal.detail);
+    selectMeal(meal.idMeal);
+    fetchMealsByDetail(meal.idMeal);
   };
 
   const addMeals = meals.map(meal => (
     <MealCard
       meal={meal}
-      key={meal.mealId}
+      key={meal.idMeal}
       clickHandler={() => handleFetchMeal(meal)}
     />
   ));
@@ -29,8 +29,8 @@ const MealList = ({ meals, fetchMealsByDetail, selectMeal }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  selectMeal: detail => dispatch(selectMeal(detail)),
-  fetchMealByDetail: detail => dispatch(fetchMealsByDetail(detail)),
+  selectMeal: idMeal => dispatch(selectMeal(idMeal)),
+  fetchMealByDetail: idMeal => dispatch(fetchMealsByDetail(idMeal)),
 });
 
 MealList.propTypes = {

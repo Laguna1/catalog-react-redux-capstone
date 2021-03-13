@@ -4,12 +4,10 @@ import { Link } from 'react-router-dom';
 
 const MealCard = ({ meal, clickHandler }) => {
   const {
-    mealId,
-    name,
-    category,
-    image,
-    ingredients,
-    measures,
+    idMeal,
+    strMeal,
+    strMealThumb,
+    strCategory,
   } = meal;
 
   const handleClick = meal => {
@@ -17,7 +15,7 @@ const MealCard = ({ meal, clickHandler }) => {
   };
 
   return (
-    <div className="meal-card" key={mealId}>
+    <div className="meal-card" key={idMeal}>
       <h1 className="title">
         <Link
           to={{
@@ -26,25 +24,21 @@ const MealCard = ({ meal, clickHandler }) => {
           onClick={() => handleClick(meal)}
           className="link"
         >
-          {meal.name}
+          {meal.strMeal}
         </Link>
       </h1>
-      <p>{category}</p>
-      <img src={image} alt={name} />
-      <p>{ingredients}</p>
-      <p>{measures}</p>
+      <p>{strCategory}</p>
+      <img src={strMealThumb} alt={strMeal} />
     </div>
   );
 };
 
 MealCard.propTypes = {
   meal: PropTypes.shape({
-    mealId: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    ingredients: PropTypes.string.isRequired,
-    measures: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    idMeal: PropTypes.number.isRequired,
+    strMeal: PropTypes.string.isRequired,
+    strCategory: PropTypes.string.isRequired,
+    strMealThumb: PropTypes.string.isRequired,
   }).isRequired,
   clickHandler: PropTypes.func.isRequired,
 };

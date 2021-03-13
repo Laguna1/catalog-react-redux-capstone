@@ -14,7 +14,7 @@ import {
 
 const MainPage = ({
   meals,
-  categories,
+  groups,
   loading,
   error,
   fetchInit,
@@ -47,17 +47,17 @@ const MainPage = ({
   }, []);
 
   return (
-    <div>
-      <CategoryFilter categories={categories} onFilter={handleFilterChange} />
+    <>
+      <CategoryFilter groups={groups} onFilter={handleFilterChange} />
       {error && <p>Something went wrong</p>}
       {loading ? (
-        <div>Loading...</div>
+        <p>Loading...</p>
       ) : (
-        <div>
+        <>
           <MealList meals={meals} />
-        </div>
+        </>
       )}
-    </div>
+    </>
   );
 };
 
@@ -82,7 +82,7 @@ const mapDispatchToProps = dispatch => ({
 
 MainPage.propTypes = {
   meals: PropTypes.arrayOf(PropTypes.object),
-  categories: PropTypes.arrayOf(PropTypes.object),
+  groups: PropTypes.arrayOf(PropTypes.object),
   loading: PropTypes.bool,
   error: PropTypes.bool,
   fetchInit: PropTypes.func.isRequired,
@@ -93,7 +93,7 @@ MainPage.propTypes = {
 
 MainPage.defaultProps = {
   meals: [],
-  categories: [],
+  groups: [],
   loading: false,
   error: false,
 };

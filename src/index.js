@@ -1,60 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { BrowserRouter } from 'react-router-dom';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 import './index.css';
 import App from './components/App';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root'),
-// );
-const mealIds = () => Math.ceil(Math.random() * 100);
-
-const mealTitles = [
-  'Almond',
-  'Bean',
-  'Baobab',
-  'Wineberry',
-  'Tomato',
-  'Strawberry',
-  'Mango',
-];
-
-const categories = [
-  'Beech',
-  'Nettle',
-  'Grass',
-  'Aster',
-  'Buttercup',
-  'Pea',
-  'Olive',
-];
-
-const contentRandom = () => Math.floor(Math.random() * categories.length);
-
-const meals = [];
-
-for (let i = 0; i < mealTitles.length; i += 1) {
-  meals[i] = {
-    mealId: mealIds(),
-    title: mealTitles[i],
-    content: categories[contentRandom()],
-  };
-}
-
-const initialState = {
-  meals,
-};
-
-const store = createStore(rootReducer, initialState);
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(logger, thunk)),
+);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <Header />
+      <App />
+      <Footer />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root'),
 );

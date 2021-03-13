@@ -12,8 +12,6 @@ import {
   FETCH_MEAL_ERROR,
 } from './actionTypes';
 
-import { FILTERED_MEALS_BY_CATEGORY } from '../api/api';
-
 const fetchInit = () => ({
   type: FETCH_INIT,
 });
@@ -62,13 +60,14 @@ const fetchMealError = error => ({
   payload: error,
 });
 
-const fetchMealsByDetail = categories => dispatch => {
-  const url = FILTERED_MEALS_BY_CATEGORY;
+const fetchMealsByDetail = detail => dispatch => {
+  const BASE_URL = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
+  const url = `${BASE_URL}${detail}`;
 
   dispatch(fetchInitMeal());
   axios.get(url)
     .then(responce => {
-      dispatch(fetchSuccess(responce.data));
+      dispatch(fetchSuccess(responce.data.meals));
     })
     .catch(error => {
       dispatch(fetchMealError(error.message));

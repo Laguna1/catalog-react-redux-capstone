@@ -10,20 +10,20 @@ const CategoryFilter = ({ onFilter, categories }) => {
     if (category.name !== null) {
       return (
         <option
-          key={category.id}
-          id={category.name}
-          name={category.name}
+          key={category.idCategory}
+          id={category.idCategory}
+          name={category.strCategory}
         >
-          {category.name}
+          {category.strCategory}
         </option>
       );
     }
 
     return (
       <option
-        key={category.id}
-        id={category.name}
-        name={category.name}
+        key={category.idCategory}
+        id={category.idCategory}
+        name={category.strCategory}
       >
         {category.name}
       </option>
