@@ -5,24 +5,24 @@ const Meal = ({ meal }) => (
   <div className="meal">
     <img src={meal.strMealThumb} alt={meal.strMeal} className="image" />
     <p>
-      Tags:
+      Tags :
       <span>
         {meal.strTags}
       </span>
     </p>
     <h2>{meal.strMeal}</h2>
     <p>
-      Area:
+      Area :
       {meal.strArea}
     </p>
     <p>
-      Category:
+      Category :
       <span>
         {meal.strCategory}
       </span>
     </p>
     <p>
-      <h3>How to cook:</h3>
+      <h3>How to cook :</h3>
       {meal.strInstructions}
     </p>
   </div>
@@ -37,6 +37,7 @@ Meal.propTypes = ({
     strArea: PropTypes.string,
     strInstructions: PropTypes.string,
     strTags: PropTypes.string,
+    strIngredients: PropTypes.string,
   }).isRequired,
 });
 
