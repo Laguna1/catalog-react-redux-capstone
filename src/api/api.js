@@ -10,12 +10,13 @@ const getMeals = async (filter = '') => {
 
   try {
     const { data: { meals } } = await axios.get(url);
+    const mealList = [];
 
     await Promise.all(meals.map(async meal => {
-      meals.push(meal);
+      mealList.push(meal);
     }));
 
-    return meals;
+    return mealList;
   } catch (e) {
     throw new Error(e);
   }

@@ -29,16 +29,16 @@ const MainPage = ({
 
     try {
       const result = await getMeals(filter);
-      const categories = await getAllCategories();
+      const groups = await getAllCategories();
       fetchMeals(result);
-      fetchCategories(categories);
+      fetchCategories(groups);
     } catch (e) {
       fetchFail();
     }
   };
 
-  const handleFilterChange = async category => {
-    const filteredMeals = await getMeals(category);
+  const handleFilterChange = async group => {
+    const filteredMeals = await getMeals(group);
     fetchMeals(filteredMeals);
   };
 
@@ -49,9 +49,9 @@ const MainPage = ({
   return (
     <>
       <CategoryFilter groups={groups} onFilter={handleFilterChange} />
-      {error && <p>Something went wrong</p>}
+      {error && <p>Something went wrong - main-page</p>}
       {loading ? (
-        <p>Loading...</p>
+        <p>Loading. 1 ..</p>
       ) : (
         <>
           <MealList meals={meals} />
@@ -64,10 +64,10 @@ const MainPage = ({
 const mapStateToProps = state => {
   const { meals: { loading, error } } = state;
   const meals = getMealsList(state);
-  const categories = getMealCategoriesList(state);
+  const groups = getMealCategoriesList(state);
   return {
     meals,
-    categories,
+    groups,
     loading,
     error,
   };
@@ -77,7 +77,7 @@ const mapDispatchToProps = dispatch => ({
   fetchInit: () => dispatch(fetchInit()),
   fetchMeals: result => dispatch(fetchMeals(result)),
   fetchFail: () => dispatch(fetchFail()),
-  fetchCategories: categories => dispatch(fetchCategories(categories)),
+  fetchCategories: groups => dispatch(fetchCategories(groups)),
 });
 
 MainPage.propTypes = {

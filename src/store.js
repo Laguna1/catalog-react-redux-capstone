@@ -1,6 +1,6 @@
 const getMealsState = store => store.meals.meals;
 
-const getMealCategories = store => store.categories.categories;
+const getMealCategories = store => store.groups.groups;
 
 const getMealsList = store => getMealsState(store);
 

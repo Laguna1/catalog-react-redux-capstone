@@ -6,7 +6,7 @@ import Meal from './Meal';
 import './App.css';
 
 function App() {
-  const meal = useSelector(store => store.singleMealReducer.meal.data);
+  const meal = useSelector(store => store.singleMealReducer.meal[0]);
   return (
     <>
       <div>

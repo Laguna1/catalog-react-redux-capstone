@@ -46,9 +46,9 @@ const fetchSuccess = data => ({
   payload: data,
 });
 
-const selectMeal = detail => ({
+const selectMeal = idMeal => ({
   type: SELECT_MEAL,
-  detail,
+  idMeal,
 });
 
 const fetchInitMeal = () => ({
@@ -60,9 +60,9 @@ const fetchMealError = error => ({
   payload: error,
 });
 
-const fetchMealsByDetail = detail => dispatch => {
+const fetchMealById = idMeal => dispatch => {
   const BASE_URL = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
-  const url = `${BASE_URL}${detail}`;
+  const url = `${BASE_URL}${idMeal}`;
 
   dispatch(fetchInitMeal());
   axios.get(url)
@@ -88,9 +88,6 @@ export {
   fetchCategories,
   changeFilter,
   fetchMeal,
-  fetchSuccess,
-  fetchMealsByDetail,
-  fetchInitMeal,
+  fetchMealById,
   selectMeal,
-  fetchMealError,
 };

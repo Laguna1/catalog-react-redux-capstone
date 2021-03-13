@@ -7,7 +7,7 @@ import selectMealReducer from './selectMeal';
 
 const rootReducer = combineReducers({
   meals: mealReducer,
-  categories: categoryReducer,
+  groups: categoryReducer,
   filterReducer,
   singleMealReducer,
   selectMealReducer,

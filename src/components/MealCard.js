@@ -7,7 +7,6 @@ const MealCard = ({ meal, clickHandler }) => {
     idMeal,
     strMeal,
     strMealThumb,
-    strCategory,
   } = meal;
 
   const handleClick = meal => {
@@ -27,7 +26,6 @@ const MealCard = ({ meal, clickHandler }) => {
           {meal.strMeal}
         </Link>
       </h1>
-      <p>{strCategory}</p>
       <img src={strMealThumb} alt={strMeal} />
     </div>
   );
@@ -37,7 +35,6 @@ MealCard.propTypes = {
   meal: PropTypes.shape({
     idMeal: PropTypes.number.isRequired,
     strMeal: PropTypes.string.isRequired,
-    strCategory: PropTypes.string.isRequired,
     strMealThumb: PropTypes.string.isRequired,
   }).isRequired,
   clickHandler: PropTypes.func.isRequired,
