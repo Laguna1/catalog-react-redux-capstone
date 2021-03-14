@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchMealById, selectMeal } from '../actions/index';
 import MealCard from '../components/MealCard';
+import './MealList.css';
 
 const MealList = ({ meals, fetchMealById, selectMeal }) => {
   const handleFetchMeal = meal => {
@@ -19,8 +20,8 @@ const MealList = ({ meals, fetchMealById, selectMeal }) => {
   ));
 
   return (
-    <div>
-      <h1>All Meals</h1>
+    <div className="meals-wrapper">
+      <h4>All Meals in this category:</h4>
       <div className="meals-list">
         {addMeals}
       </div>

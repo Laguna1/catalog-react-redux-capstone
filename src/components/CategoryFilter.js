@@ -31,9 +31,9 @@ const CategoryFilter = ({ onFilter, categories }) => {
   });
 
   return (
-    <div>
-      <h2>Categories</h2>
-      <select className="categories-list" onChange={handleFilter}>
+    <div clasName="category-filter">
+      <h3>Categories: </h3>
+      <select className="categories-list p-2 ml-2" onChange={handleFilter}>
         <option name="All" key="All">All</option>
         {addCategoriesList}
       </select>

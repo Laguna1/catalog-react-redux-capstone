@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Navbar } from 'react-bootstrap';
+import './Header.css';
 
 const Header = () => (
-  <div className="header">
-    <h1>Header logo here!</h1>
-    <Link to="/" className="nav-link">All Meals</Link>
-    <Link to="/" className="nav-link">Contacts</Link>
-    <Link to="/" className="nav-link">About</Link>
-  </div>
+  <Navbar className="header bg-primary">
+    <div className="text-uppercase ml-5 display-4">Recipes for you</div>
+    <div>
+      <span className="mx-3 text-uppercase text-muted">Home</span>
+      <span className="mx-3 text-uppercase text-muted">Categories</span>
+    </div>
+  </Navbar>
 );
 
 export default Header;

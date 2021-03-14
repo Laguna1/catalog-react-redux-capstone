@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './MealCard.css';
 
 const MealCard = ({ meal, clickHandler }) => {
   const {
@@ -14,20 +15,23 @@ const MealCard = ({ meal, clickHandler }) => {
   };
 
   return (
-    <div className="meal-card" key={idMeal}>
-      <h1 className="title">
-        <Link
-          to={{
-            pathname: `/meals/${idMeal}`,
-            state: { meal },
-          }}
-          onClick={() => handleClick(meal)}
-          className="link"
-        >
-          {meal.strMeal}
-        </Link>
-      </h1>
-      <img src={strMealThumb} alt={strMeal} className="image" />
+    <div className="meal-card-wrapper">
+      <div className="meal-card" key={idMeal}>
+        <h1 className="title">
+          <Link
+            to={{
+              pathname: `/meals/${idMeal}`,
+              state: { meal },
+            }}
+            onClick={() => handleClick(meal)}
+            className="link"
+          >
+            {meal.strMeal}
+            1
+          </Link>
+        </h1>
+        <img src={strMealThumb} alt={strMeal} className="image" />
+      </div>
     </div>
   );
 };

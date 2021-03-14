@@ -9,7 +9,7 @@ const App = () => {
   const meal = useSelector(store => store.singleMealReducer.meal[0]);
   return (
     <>
-      <div>
+      <div className="App align-items-center">
         <Switch>
           <Route exact path="/" component={MainPage} />
           {

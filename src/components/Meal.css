@@ -1,0 +1,12 @@
+.meal {
+  display: flex;
+}
+
+.meal img {
+  border-radius: 5%;
+  border: 25px solid #007afe;
+}
+
+.meal p {
+  color: red;
+}
