@@ -20,11 +20,8 @@ const MealList = ({ meals, fetchMealById, selectMeal }) => {
   ));
 
   return (
-    <div className="meals-wrapper">
-      <h4>All Meals in this category:</h4>
-      <div className="meals-list">
-        {addMeals}
-      </div>
+    <div className="meals-list my-3">
+      {addMeals}
     </div>
   );
 };

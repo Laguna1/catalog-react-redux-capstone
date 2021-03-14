@@ -1,32 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { resetStep } from '../actions/index';
+
 import './Meal.css';
 
 const Meal = ({ meal }) => (
-  <div className="meal align-items-center">
+  <div className="meal d-flex align-items-center">
     <div>
+      <div className="back-btn mb-3 ml-1 text-left">
+        <Link to="/">
+          <button type="button" onClick={resetStep} className="btn btn-large btn-primary rounded-0">Back</button>
+        </Link>
+      </div>
       <img src={meal.strMealThumb} alt={meal.strMeal} className="image" />
     </div>
-    <div className="meal-info">
+    <div className="meal-info w-50">
       <h1 className="text-primary my-5 font-weight-bold display-4">{meal.strMeal}</h1>
       <p className="meal-card-detail text-left ml-5">
         Category :
-        <span>
-          {meal.strCategory}
-        </span>
+        <strong>
+          <span>
+            {meal.strCategory}
+          </span>
+        </strong>
       </p>
       <p className="meal-card-detail text-left ml-5">
         Tags :
-        <span>
-          {meal.strTags}
-        </span>
+        <strong>
+          <span>
+            {meal.strTags}
+          </span>
+        </strong>
       </p>
-      <p className="meal-card-detail text-left ml-5">
+      <p className="meal-card-detail text-left ml-5 mb-3">
         Area :
-        {meal.strArea}
+        <strong>
+          {meal.strArea}
+        </strong>
+
       </p>
-      <p className="meal-card-detail text-left ml-5">
-        <h4>How to cook :</h4>
+      <p className="meal-card-detail text-left ml-5 mt-5">
+        <h6 className="font-weight-bold">How to cook :</h6>
         {meal.strInstructions}
       </p>
     </div>

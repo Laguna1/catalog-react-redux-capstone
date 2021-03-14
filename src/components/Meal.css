@@ -1,12 +1,10 @@
 .meal {
-  display: flex;
+  margin: 3%;
 }
 
 .meal img {
   border-radius: 5%;
   border: 25px solid #007afe;
-}
-
-.meal p {
-  color: red;
+  width: 100%;
+  height: 600px;
 }

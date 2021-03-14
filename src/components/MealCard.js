@@ -16,21 +16,21 @@ const MealCard = ({ meal, clickHandler }) => {
 
   return (
     <div className="meal-card-wrapper">
-      <div className="meal-card" key={idMeal}>
-        <h1 className="title">
+      <div className="meal-card p-3" key={idMeal}>
+        <img src={strMealThumb} alt={strMeal} className="meal-card-image my-3" />
+        <div className="title">
           <Link
             to={{
               pathname: `/meals/${idMeal}`,
               state: { meal },
             }}
             onClick={() => handleClick(meal)}
-            className="link"
+            className="meal-card-link"
           >
             {meal.strMeal}
-            1
+            mealcard
           </Link>
-        </h1>
-        <img src={strMealThumb} alt={strMeal} className="image" />
+        </div>
       </div>
     </div>
   );

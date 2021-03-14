@@ -49,9 +49,9 @@ const MainPage = ({
   return (
     <>
       <CategoryFilter categories={categories} onFilter={handleFilterChange} />
-      {error && <p>Something went wrong - main page</p>}
+      {error && <p>Something went wrong</p>}
       {loading ? (
-        <p>Loading. 1 ..</p>
+        <p>Loading...</p>
       ) : (
         <>
           <MealList meals={meals} />

@@ -72,6 +72,8 @@ const changeFilter = filter => ({
   },
 });
 
+const resetStep = () => ({ type: 'RESET_STEP' });
+
 export {
   fetchInit,
   fetchMeals,
@@ -81,4 +83,5 @@ export {
   fetchMealById,
   selectMeal,
   fetchSuccess,
+  resetStep,
 };

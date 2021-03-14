@@ -1,3 +1,19 @@
+.meal-card-wrapper {
+  width: 24vw;
+  min-width: 42vh;
+  margin-bottom: 20px;
+  background-color: #fdfbfa;
+  box-shadow: 1px 5px 9px 2px #d1d1d1;
+  transition: box-shadow 0.5s, border 1s;
+}
+
 .meal-card {
   border: 2px solid green;
+  padding-bottom: 3em;
+}
+
+.meal-card-image {
+  width: 85%;
+  height: 250px;
+  object-fit: cover;
 }

@@ -1,3 +1,6 @@
-.meals-wrapper {
-  border: 2px solid blue;
+.meals-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
 }
