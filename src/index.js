@@ -7,7 +7,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
-import './index.css';
+import './assets/index.css';
 import App from './components/App';
 import Header from './components/Header';
 import Footer from './components/Footer';

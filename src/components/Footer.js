@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.css';
+import '../assets/components/Footer.css';
 
 const Footer = () => (
   <div className="footer bg-primary">

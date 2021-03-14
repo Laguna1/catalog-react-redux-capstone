@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchMealById, selectMeal } from '../actions/index';
 import MealCard from '../components/MealCard';
-import './MealList.css';
+import '../assets/containers/MealList.css';
 
 const MealList = ({ meals, fetchMealById, selectMeal }) => {
   const handleFetchMeal = meal => {

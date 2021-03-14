@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import MainPage from './MainPage';
 import Meal from './Meal';
-import './App.css';
+import '../assets/components/App.css';
 
 const App = () => {
   const meal = useSelector(store => store.singleMealReducer.meal[0]);

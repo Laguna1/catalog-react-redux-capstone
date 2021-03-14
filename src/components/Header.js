@@ -3,7 +3,7 @@ import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { resetStep } from '../actions/index';
 
-import './Header.css';
+import '../assets/components/Header.css';
 
 const Header = () => (
   <Navbar className="header bg-primary d-flex flex-row justify-content-between">

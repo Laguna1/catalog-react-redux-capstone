@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import './MealCard.css';
+import '../assets/components/MealCard.css';
 
 const MealCard = ({ meal, clickHandler }) => {
   const {

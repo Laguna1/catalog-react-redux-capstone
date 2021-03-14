@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { resetStep } from '../actions/index';
-
-import './Meal.css';
+import '../assets/components/Meal.css';
 
 const Meal = ({ meal }) => (
   <div className="meal d-flex align-items-center">
