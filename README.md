@@ -1,13 +1,13 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 ## React-Redux-Capstone
-This the the capstone project aat the end of the react-redux module of Microverse main technical curriculum.
+This the the capstone project at the end of the react-redux module of [Microverse](https://www.microverse.org/) main technical curriculum.
 
 The project is a single page application built with React and Redux
 This projest has two pages:
 - one page with a list of meals that could be filtered by categories
 - and one page for the each meal with the meal`s details.
-All data was retrieved from the API, the catalogue of meals,   [Meals DB:](https://www.themealdb.com/api.php)
+- All data was retrieved from the API, the catalogue of meals,   [Meals DB:](https://www.themealdb.com/api.php)
 
 ![Main Page](./src/assets/images/MainPage.png)
 ![Meal detail Page](./src/assets/images/MealDetailPage.png)
@@ -27,8 +27,8 @@ All data was retrieved from the API, the catalogue of meals,   [Meals DB:](https
  - Heroku
 
 ### Prerequisites
-npm 7.0.0
-node 15.6.0
+- npm 7.0.0
+- node 15.6.0
 
 ### Setup
 Download or clone this repo:
