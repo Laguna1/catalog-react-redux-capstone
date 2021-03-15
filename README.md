@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 ## React-Redux-Capstone
-This the the capstone project at the end of the react-redux module of [Microverse](https://www.microverse.org/) main technical curriculum.
+This the the capstone project at the end of the react-redux module of [Microverse](https://www.microverse.org/) main technical curriculum
 
 The project is a single page application built with React and Redux
 This projest has two pages:
