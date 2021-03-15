@@ -5,44 +5,47 @@ import { resetStep } from '../actions/index';
 import '../assets/components/Meal.css';
 
 const Meal = ({ meal }) => (
-  <div className="meal d-flex align-items-center">
-    <div>
-      <div className="back-btn mb-3 ml-1 text-left">
-        <Link to="/">
-          <button type="button" onClick={resetStep} className="btn btn-large btn-primary rounded-0">Back</button>
-        </Link>
+  <div className="meal text-center">
+    <div className="d-flex single-card">
+      <div className="w-50 image-single-card pt-3">
+        <img src={meal.strMealThumb} alt={meal.strMeal} />
       </div>
-      <img src={meal.strMealThumb} alt={meal.strMeal} className="image" />
+      <div className="meal-info w-50">
+        <h1 className="my-3 font-weight-bold display-6">{meal.strMeal}</h1>
+        <div className="meal-card-detail text-left ml-5">
+          Category :
+          <strong>
+            <span>
+              {meal.strCategory}
+            </span>
+          </strong>
+        </div>
+        <div className="meal-card-detail text-left ml-5">
+          Tags :
+          <strong>
+            <span>
+              {meal.strTags}
+            </span>
+          </strong>
+        </div>
+        <div className="meal-card-detail text-left ml-5 mb-3">
+          Area :
+          <strong>
+            {meal.strArea}
+          </strong>
+        </div>
+        <div className="meal-card-detail text-left ml-5 mt-5">
+          <strong>How to cook :</strong>
+          <div className="how-to-cook pr-1">
+            {meal.strInstructions}
+          </div>
+        </div>
+      </div>
     </div>
-    <div className="meal-info w-50">
-      <h1 className="text-primary my-5 font-weight-bold display-4">{meal.strMeal}</h1>
-      <p className="meal-card-detail text-left ml-5">
-        Category :
-        <strong>
-          <span>
-            {meal.strCategory}
-          </span>
-        </strong>
-      </p>
-      <p className="meal-card-detail text-left ml-5">
-        Tags :
-        <strong>
-          <span>
-            {meal.strTags}
-          </span>
-        </strong>
-      </p>
-      <p className="meal-card-detail text-left ml-5 mb-3">
-        Area :
-        <strong>
-          {meal.strArea}
-        </strong>
-
-      </p>
-      <p className="meal-card-detail text-left ml-5 mt-5">
-        <h6 className="font-weight-bold">How to cook :</h6>
-        {meal.strInstructions}
-      </p>
+    <div className="back-btn ml-5 text-center">
+      <Link to="/">
+        <button type="button" onClick={resetStep} className="px-5 btn btn-lg btn-outline-warning rounded-0">Back</button>
+      </Link>
     </div>
   </div>
 );

@@ -25,10 +25,9 @@ const MealCard = ({ meal, clickHandler }) => {
               state: { meal },
             }}
             onClick={() => handleClick(meal)}
-            className="meal-card-link"
+            className="meal-card-link text-decoration-none"
           >
             {meal.strMeal}
-            mealcard
           </Link>
         </div>
       </div>

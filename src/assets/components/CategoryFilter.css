@@ -1,3 +1,6 @@
 .categories-list {
-  border: 1px solid grey;
+  border: 1px solid whitesmoke;
+  background-color: white;
+  box-shadow: 1px 5px 9px 2px #d1d1d1;
+  transition: box-shadow 0.5s, border 1s;
 }

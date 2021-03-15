@@ -10,7 +10,6 @@ import rootReducer from './reducers/index';
 import './assets/index.css';
 import App from './components/App';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = createStore(
@@ -23,7 +22,6 @@ ReactDOM.render(
     <BrowserRouter>
       <Header />
       <App />
-      <Footer />
     </BrowserRouter>
   </Provider>,
   document.getElementById('root'),

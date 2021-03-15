@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../assets/components/CategoryFilter.css';
 
 const CategoryFilter = ({ onFilter, categories }) => {
   const handleFilter = ({ target }) => {
@@ -31,7 +32,7 @@ const CategoryFilter = ({ onFilter, categories }) => {
   });
 
   return (
-    <div clasName="category-filter">
+    <div className="category-filter">
       <select className="categories-list p-2 ml-2 mt-3" onChange={handleFilter}>
         <option name="All" key="All">All Categories</option>
         {addCategoriesList}
