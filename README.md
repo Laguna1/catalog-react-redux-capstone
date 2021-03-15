@@ -1,12 +1,16 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 ## React-Redux-Capstone
-This the the capstone project after the react-redux module of Microverse main technical curriculum.
+This the the capstone project aat the end of the react-redux module of Microverse main technical curriculum.
 
-A catalogue of meals, using Meals DB: https://www.themealdb.com/api.php
+The project is a single page application built with React and Redux
+This projest has two pages:
+- one page with a list of meals that could be filtered by categories
+- and one page for the each meal with the meal`s details.
+All data was retrieved from the API, the catalogue of meals,   [Meals DB:](https://www.themealdb.com/api.php)
 
-![Main Pege]()
-![Meal detail Page]()
+![Main Page](./src/assets/images/MainPage.png)
+![Meal detail Page](./src/assets/images/MealDetailPage.png)
 
 ### Live Demo link
 [Demo link](https://catalog-react-redux-capstone.herokuapp.com/)
@@ -20,6 +24,23 @@ A catalogue of meals, using Meals DB: https://www.themealdb.com/api.php
  - [API](https://www.themealdb.com/api.php)
  - Axios
  - npm
+ - Heroku
+
+### Prerequisites
+npm 7.0.0
+node 15.6.0
+
+### Setup
+Download or clone this repo:
+https://github.com/Laguna1/catalog-react-redux-capstone
+
+### Install
+- cd root folder and run `npm install`
+### Usage
+- after install dependencies run `npm start`
+### Tests
+- run the tests in the project root folder using  `npm test`
+
 
 ## Author
 
@@ -33,7 +54,7 @@ A catalogue of meals, using Meals DB: https://www.themealdb.com/api.php
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the issues page. 
+Feel free to check the [issues page](https://github.com/Laguna1/catalog-react-redux-capstone/issues)
 
 ### Show your support
 
