@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render Header correctly 1`] = `
+exports[`should render Header correctly 1 1`] = `
 <Navbar
   className="header d-flex flex-row justify-content-between"
   collapseOnSelect={false}
@@ -19,6 +19,17 @@ exports[`should render Header correctly 1`] = `
   <div
     className=""
   >
+    <Link
+      to="/"
+    >
+      <button
+        className="px-5 btn btn-lg btn-link rounded-0 text-uppercase h5"
+        onClick={[Function]}
+        type="button"
+      >
+        Home
+      </button>
+    </Link>
     <span
       className="nav-right mx-3 text-uppercase h5"
     >

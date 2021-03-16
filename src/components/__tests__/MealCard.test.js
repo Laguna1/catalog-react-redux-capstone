@@ -10,7 +10,7 @@ const mealTest = {
 
 const renderer = new ShallowRenderer();
 
-it('should render MealCard correctly', () => {
+it('should render MealCard correctly 1', () => {
   renderer.render(<MealCard meal={mealTest} />);
 
   expect(renderer.getRenderOutput()).toMatchSnapshot();
