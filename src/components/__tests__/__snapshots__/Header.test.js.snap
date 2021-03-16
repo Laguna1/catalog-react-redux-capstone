@@ -16,9 +16,18 @@ exports[`should render Header correctly 1`] = `
       Recipes-4-u
     </h2>
   </div>
-  <div
-    className=""
-  >
+  <div>
+    <Link
+      to="/"
+    >
+      <button
+        className="px-5 btn btn-lg btn-link rounded-0 text-uppercase h5"
+        onClick={[Function]}
+        type="button"
+      >
+        Home
+      </button>
+    </Link>
     <span
       className="nav-right mx-3 text-uppercase h5"
     >

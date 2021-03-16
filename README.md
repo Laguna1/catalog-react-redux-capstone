@@ -13,7 +13,7 @@ This projest has two pages:
 ![Meal detail Page](./src/assets/images/MealDetailPage.png)
 
 ### Live Demo link
-[Demo link](https://catalog-react-redux-capstone.herokuapp.com/)
+[Demo link](https://nervous-engelbart-4e9566.netlify.app/)
 
 ##  Built with
  - ES6
@@ -24,7 +24,7 @@ This projest has two pages:
  - [API](https://www.themealdb.com/api.php)
  - Axios
  - npm
- - Heroku
+ - Netlify
 
 ### Prerequisites
 - npm 7.0.0
