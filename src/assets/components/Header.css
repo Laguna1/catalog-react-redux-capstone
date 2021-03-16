@@ -15,6 +15,18 @@ h2 {
   text-shadow: 2px 2px 5px red;
 }
 
+a {
+  color: orange !important;
+}
+
+.btn-link {
+  color: orange !important;
+}
+
+.btn:visited {
+  text-decoration: none !important;
+}
+
 .nav-right {
   color: orange;
 }

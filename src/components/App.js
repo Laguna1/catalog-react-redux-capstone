@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import MainPage from './MainPage';
+import MainPage from '../containers/MainPage';
 import Meal from './Meal';
 import '../assets/components/App.css';
 
