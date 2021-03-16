@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render MealCard correctly 1`] = `
+<div
+  className="meal-card-wrapper"
+>
+  <div
+    className="meal-card p-3"
+  >
+    <img
+      alt="My meal"
+      className="meal-card-image my-3"
+      src="https://www.google.com/images/test.png"
+    />
+    <div
+      className="title"
+    >
+      <Link
+        className="meal-card-link text-decoration-none"
+        onClick={[Function]}
+        to={
+          Object {
+            "pathname": "/meals/52525",
+            "state": Object {
+              "meal": Object {
+                "idMeal": "52525",
+                "strMeal": "My meal",
+                "strMealThumb": "https://www.google.com/images/test.png",
+              },
+            },
+          }
+        }
+      >
+        My meal
+      </Link>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render MealCard correctly 1 1`] = `
+<div
+  className="meal-card-wrapper"
+>
+  <div
+    className="meal-card p-3"
+  >
+    <img
+      alt="My meal"
+      className="meal-card-image my-3"
+      src="https://www.google.com/images/test.png"
+    />
+    <div
+      className="title"
+    >
+      <Link
+        className="meal-card-link text-decoration-none"
+        onClick={[Function]}
+        to={
+          Object {
+            "pathname": "/meals/52525",
+            "state": Object {
+              "meal": Object {
+                "idMeal": "52525",
+                "strMeal": "My meal",
+                "strMealThumb": "https://www.google.com/images/test.png",
+              },
+            },
+          }
+        }
+      >
+        My meal
+      </Link>
+    </div>
+  </div>
+</div>
+`;
