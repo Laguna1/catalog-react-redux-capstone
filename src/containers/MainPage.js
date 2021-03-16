@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect, useSelector } from 'react-redux';
 import { getMeals, getAllGroups } from '../api/api';
-import MealList from '../containers/MealList';
-import CategoryFilter from './CategoryFilter';
+import MealList from './MealList';
+import CategoryFilter from '../components/CategoryFilter';
 import { getMealGroupsList, getMealsList } from '../store';
 import {
   fetchInit,
